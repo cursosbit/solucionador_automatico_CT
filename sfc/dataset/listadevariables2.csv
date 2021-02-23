@@ -1,0 +1,12 @@
+nombrevar_simbolotrab|unidad_trab|simbolo_si|unidad_si|
+distancia:d,radio:r,diámetro:d,altura:y,profundidad:y,mide:l,longitud:l,posición:x,posición inicial:xi,posición final:xf,altura máxima:ymax,alcance horizontal:alc,alcance máximo:alcmax|m,cm,km,ft,pulg|d|m
+velocidad angular:w|rpm,rev/s,rad/s|w|rad/s
+velocidad:v,velocidad final:vf,velocidad inicial:vi,velocidad media:vm,velocidad promedio:vm,velocidad tangencial:vt,velocidad máxima:vmax,velocidad mínima:vmin|m/s,cm/s,km/h,ft/s,mi/h|v|m/s
+aceleración:a,g:g,aceleración gravedad:g,aceleración media:am,aceleración tangencial:at,aceleración centrípeta:ac|m/s²,ft/s²|a|m/s²
+aceleración angular:alfa|rad/s²,rev/min²|alfa|rad/s²
+tiempo:t,tarda:t,tiempo vuelo:tv,tiempo máximo:tmax|s,min,h|t|s
+número revoluciones:n|rev|n|rev
+ángulo:ang|º|ang|º
+masa:m|kg,lb,g|m|kg
+fuerza centrípeta:Fc,fuerza:F,tensión:T|N,lbf|F|N
+coeficiente fricción:uk| |uk| 
