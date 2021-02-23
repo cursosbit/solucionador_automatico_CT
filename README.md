@@ -1,2 +1,2 @@
 # solucionador_automatico_CT
-SOlucionador Automático de Ciclos Termodinámicos
+Solucionador Automático de Ciclos Termodinámicos
