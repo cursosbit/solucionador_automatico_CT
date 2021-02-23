@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>528</width>
+    <height>631</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLineEdit" name="txtPag">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>380</y>
+     <width>111</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Escriba el modelo matemático</string>
+   </property>
+   <property name="text">
+    <string>Página</string>
+   </property>
+   <property name="frame">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnAgregar">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>440</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Agregar un modelo matemático</string>
+   </property>
+   <property name="text">
+    <string>&amp;Agregar</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tableView">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>470</y>
+     <width>511</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>561</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnModificar">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>440</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Modificar el modelo matemático seleccionado</string>
+   </property>
+   <property name="text">
+    <string>Modificar</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnEliminar">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>440</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Eliminar el modelo matemático seleccionado</string>
+   </property>
+   <property name="text">
+    <string>&amp;Eliminar</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="txtNro">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>410</y>
+     <width>113</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Número del Ejercicio</string>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="txtEnunc">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>511</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="plainText">
+    <string>Enunciado</string>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="txtListVarIndep">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>140</y>
+     <width>511</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="plainText">
+    <string>Lista de Variables Independientes</string>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="txtListVarDep">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>220</y>
+     <width>511</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="plainText">
+    <string>Lista de Variables Dependientes</string>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="txtRef">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>300</y>
+     <width>511</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="plainText">
+    <string>Referencia</string>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="txtMod">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>90</y>
+     <width>511</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="plainText">
+    <string>Modelo</string>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>txtEnunc</tabstop>
+  <tabstop>txtMod</tabstop>
+  <tabstop>txtListVarIndep</tabstop>
+  <tabstop>txtListVarDep</tabstop>
+  <tabstop>txtRef</tabstop>
+  <tabstop>txtPag</tabstop>
+  <tabstop>txtNro</tabstop>
+  <tabstop>btnAgregar</tabstop>
+  <tabstop>btnModificar</tabstop>
+  <tabstop>btnEliminar</tabstop>
+  <tabstop>tableView</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
