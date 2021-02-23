@@ -1,0 +1,14 @@
+modelos;ecuaciones;variables
+movimiento uniformemente acelerado;vi + a*t - vf;vi ,  a, t ,  vf
+movimiento uniformemente acelerado;xf - xi -d;xf ,  xi , d
+movimiento uniformemente acelerado;xi + 1/2*(vi + vf)*t - xf;xi , vi ,  vf, t ,  xf
+movimiento uniformemente acelerado;a+f;a, f
+movimiento uniformemente acelerado;u+y-p*r/u;u, y, p, r
+movimiento uniformemente acelerado;u+o;u, o
+movimiento uniformemente acelerado;i+y;i, y
+movimiento uniformemente acelerado;r-t;r, t
+movimiento circular;q-w;q, w
+movimiento circular;y+t*r;y, t, r
+movimiento uniformemente acelerado;y-py*(1/2)/t+4*uy;y, py, 1, 2, t, uy
+movimiento uniformemente acelerado;vi**2 + 2*a*(xf - xi) - vf**2;vi, a, xf ,  xi ,  vf
+movimiento uniformemente acelerado;a+b-c;a, b, c
