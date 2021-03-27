@@ -232,13 +232,13 @@ def es_var_independiente(lstDatos,unidades_trab,descripción):
 
 
 def filtros2(e): #Reemplaza símbolos, caracteres especiales y palabras compuestas
-    dict = {'tiempo tarda':' tiempo ','tiempo tardo':' tiempo',
-          'cuánto tiempo':' tiempo','cuanto tardo':' tiempo',
-          'cuánto demora':' tiempo ','cuanto demora':' tiempo ',
+    dict = {'tiempo tarda':'tiempo ','tiempo tardo':' tiempo',
+          'cuánto tiempo':'tiempo','cuanto tardo':' tiempo',
+          'cuánto demora':'tiempo','cuanto demora':' tiempo ',
           'distancia recorre':' distancia ','distancia recorrido':' distancia',
           'distancia recorrida':' distancia','cuán lejos':' distancia',
-          'desplazamiento realizado':' distancia','cuánto desplaza':' distancia ',
-          'máxima altura':' altura máxima',
+          'desplazamiento realizado':'distancia','cuánto desplaza':'distancia',
+          'máxima altura':'altura máxima',
           'rapidez':'velocidad',
           'máxima velocidad':' velocidad máxima',
           'm/s cada segundo':'m/s²','metros por segundo':'m/s','segundos':' s ',' seg':' s ',
@@ -436,3 +436,105 @@ def set_var_indep(caso, contpalabra, lstDatos, unidades_trab, oracion, variable,
     simbolo_trab = set_simbolo_trab(lstDatos, caso, contpalabra, oracion, descripción)
     indep.append([simbolo_si, simbolo_trab, valor, unidad_trab, unidad_si])
     # print(simbolo_si, ' ', simbolo_trab, ' =', valor, ' ', unidad_trab,' ',unidad_si,'\n')
+
+
+def detectar_vars(data, dfvar):
+    ################## Detección de Variables ################################
+    
+    #data = pd.read_csv('enunciados.csv',sep='|',encoding = "ISO-8859-1")
+    #print ('Texto Original\n',data['enunciados'][0])
+    #print("\n")
+    
+    filtros2(data)
+    '''
+    La estructura del archivo  listadevariables2.csv, es la siguiente:
+    nombrevar_simbolotrab|unidad_trab|simbolo_si|unidad_si|
+    tiempo:t,tarda:t,tiempo vuelo:tv,tiempo máximo:tmax|s,min,h|t|s
+    ...
+    De la misma forma se hace con las diversas variables.
+    '''
+    
+    descripción = dfvar['nombrevar_simbolotrab'] # Nombre de la variable
+    unidades_trab = dfvar['unidad_trab'] # Unidades de trabajo
+    variable = dfvar['simbolo_si'] # Símbolo según el SI
+    unidades_si = dfvar['unidad_si'] # Unidades según el SI
+    
+    #dictdesc = {}
+    contdep = 0
+    contindep = 0
+    contambos = 0
+    conttotal = 0
+    contninguno = 0
+    contaciertosindep = 0
+    contaciertosdep = 0
+    conttotalvarindep = 0
+    conttotalvardep = 0
+    lst_ninguno = []
+    lst_fallaindep = []
+    lst_falladep = []
+    lst_enunciado = []  # Lista de oraciones en el enunciado
+    lst_oracion = []  # Lista de palabras de la oración en el enunciado
+    
+    #for line in descripción:
+    #    for t in line.split(','):
+            # diccionario con el nombre de la variable de trabajo y el símbolo de trabajo
+    #        dictdesc[t.split(":")[0]] = t.split(":")[1]  
+            
+    #print(dictdesc)
+    
+    #sys.exit()
+    
+    for contenunciado in range(len(data['enunciados'])): # Recorre cada enunciado
+        
+        lst_enunciado = data['enunciados'][contenunciado].split('. ') # Enunciado
+        #print(contenunciado,lst_enunciado)
+        
+        #contoracion=0
+        lst_dep = []
+        lst_indep = []
+        for contoracion in range(len(lst_enunciado)): # Recorre cada oración del enunciado
+            #print('Siguiente oración',contoracion)
+            #input()
+            lst_oracion = lst_enunciado[contoracion].split() # Oración del enunciado
+            analizar_oracion(lst_oracion, unidades_trab, descripción, unidades_si, variable, lst_dep, lst_indep)
+    
+        #print('Referencia')
+        #print(contenunciado,'Datos de Entrada:\n',data['varindep'][contenunciado])
+        #print('Calcular:\n',data['vardep'][contenunciado])
+        #print('Identificados')
+        #print('Datos de Entrada:\n',lst_indep)
+        #print('Calcular:\n',lst_dep)
+        #input()
+        #lista_estadisticas
+        if str(lst_indep) != data['varindep'][contenunciado] and str(lst_dep) != data['vardep'][contenunciado]:
+            contninguno += 1
+            #print('No Acerto Ninguno', contninguno)
+            lst_ninguno.append(contenunciado)
+            lst_falladep.append(contenunciado)
+            lst_fallaindep.append(contenunciado)
+            #input()
+        if str(lst_indep) == data['varindep'][contenunciado] and str(lst_dep) == data['vardep'][contenunciado]:
+            contindep += 1
+            contdep += 1
+            contambos += 1
+            #print('Acerto ambos',contambos)
+            
+        elif str(lst_indep) == data['varindep'][contenunciado]:
+            contindep += 1
+            #print('Acerto Var Ind', contindep)
+            lst_falladep.append(contenunciado)
+            #input()
+        elif str(lst_dep) == data['vardep'][contenunciado]:
+            contdep += 1
+            #print('Acerto Var Dep', contdep)
+            lst_fallaindep.append(contenunciado)
+            #input()
+        
+        conttotal += 1
+        conttotalvarindep += len(lst_indep)
+        conttotalvardep += len(lst_dep)
+        contaciertosindep += conteo(convertir_str_list(data['varindep'][contenunciado], 5), lst_indep)
+        contaciertosdep += conteo(convertir_str_list(data['vardep'][contenunciado], 3), lst_dep)
+        #input('Siguiente enunciado')
+    print_resultados_variables(contaciertosindep, conttotalvarindep, contaciertosdep, conttotalvardep)
+    print_resultados_enunciados(contninguno, conttotal, contindep, contdep, contambos, lst_ninguno, lst_fallaindep, lst_falladep)
