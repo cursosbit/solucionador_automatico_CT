@@ -9,6 +9,7 @@ def main():
     for line in fe.readlines():
         line = line.strip('\n')
         lista_ec.append(line)
+    
     unidades = np.genfromtxt('Unidades.txt', dtype = 'str')
 
     # Obtención del número de variables y ecuaciones

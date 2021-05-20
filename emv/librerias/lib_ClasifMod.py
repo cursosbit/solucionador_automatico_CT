@@ -14,7 +14,8 @@ from keras.layers import Dense, Activation, Dropout
 from keras.models import Sequential
 
 # Se importa las librerias propias
-from librerias.lib_IdVar import detectar_vars, dividir_datos
+from librerias.lib_IdVar import dividir_datos
+
 
 def create_network(max_words,num_classes,n_dense=1,dense_units=256,activation='selu',dropout=AlphaDropout,dropout_rate=0.5,kernel_initializer='lecun_normal',optimizer='adam'):
     """Generic function to create a fully-connected neural network.
@@ -61,16 +62,19 @@ def create_network(max_words,num_classes,n_dense=1,dense_units=256,activation='s
 
 
 def filtros1(e): # Filtros aplicados a los enunciados
-    #Convierte el texto en minúsculas
-    e['enunciados'] = e['enunciados'].str.lower()
+    # Convierte el texto en minúsculas
+    # e['enunciados'] = e['enunciados'].str.lower()
     # print ('Convertido en minúsculas\n', e['enunciados'][0])
     # print("\n")
+    
     e['enunciados']=e['enunciados'].str.replace('[:,¿?()=]²', ' ')
+    
     #Elimina las palabras vacías en español
     stop = stopwords.words('spanish')
     e['enunciados'] = e['enunciados'].apply(lambda x: ' '.join([word for word in x.split() if word not in (stop)]))
     # print ('Eliminando las palabras vacías\n', e['enunciados'][0])
     # print("\n")
+
     #Elimina varios espacios seguidos por uno solo
     e['enunciados']=e['enunciados'].str.replace('\s+', ' ')
     # print('Elimina varios espacios seguidos\n', e['enunciados'][0])
@@ -103,7 +107,7 @@ def plot_confusion_matrix(cm, classes, title='Confusion matrix',
 def clasificador(data):
     
     # Parámetros
-    max_words = 40
+    max_words = 50
     batch_size = 3
     epochs = 8
     #plot = True
@@ -262,6 +266,4 @@ def clasificador(data):
     plt.ylabel('Loss')
     plt.legend()
     plt.twinx()
-    plt.ylabel('acc')
-    
-        
+    plt.ylabel('acc')       

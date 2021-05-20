@@ -108,7 +108,7 @@ def get_list_variables(ecuacion):
                     # Inserta todos los elementos de la lista z en ecuacion
                     ecuacion.insert(ter+i+1, cadp)
                 ecuacion.pop(ter)  #Se elimina el último término
-        ter = ter+1   # Se pasa al siguiente termino
+        ter += 1   # Se pasa al siguiente termino
     
     ecuacion = del_parenthesis(ecuacion)
     ecuacion = del_numbers(ecuacion)
