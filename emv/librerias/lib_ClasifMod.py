@@ -1,4 +1,3 @@
-
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import confusion_matrix
 
@@ -17,7 +16,9 @@ from keras.models import Sequential
 from librerias.lib_IdVar import dividir_datos
 
 
-def create_network(max_words,num_classes,n_dense=1,dense_units=256,activation='selu',dropout=AlphaDropout,dropout_rate=0.5,kernel_initializer='lecun_normal',optimizer='adam'):
+def create_network(max_words, num_classes, n_dense=1, dense_units=256,
+                   activation='selu', dropout=AlphaDropout, dropout_rate=0.5,
+                   kernel_initializer='lecun_normal', optimizer='adam'):
     """Generic function to create a fully-connected neural network.
     # Arguments
         n_dense: int > 0. Number of dense layers.
@@ -62,6 +63,7 @@ def create_network(max_words,num_classes,n_dense=1,dense_units=256,activation='s
 
 
 def filtros1(e): # Filtros aplicados a los enunciados
+    
     # Convierte el texto en minúsculas
     # e['enunciados'] = e['enunciados'].str.lower()
     # print ('Convertido en minúsculas\n', e['enunciados'][0])

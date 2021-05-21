@@ -18,7 +18,7 @@ from librerias.lib_IdVar import detectar_vars
 # print("numpy version", np.__version__)
 # print("pandas version", pd.__version__)
 
-data = pd.read_csv('dataset/enunciadosCT.csv',sep='|')
+data = pd.read_csv('dataset/enunciadosCT1.csv',sep='|')
 
 # clasificador(data)
 

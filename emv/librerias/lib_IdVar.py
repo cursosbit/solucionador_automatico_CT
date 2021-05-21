@@ -279,7 +279,7 @@ def filtros2(e):
     for i in range(len(e['enunciados'])):  # Recorre todos los enunciados
         for key, val in dict.items():  # Recorre el diccionario de variables
             e['enunciados'][i] = e['enunciados'][i].replace(key, val)
-        print ('Simplificación ortografica\n',i,") ",e['enunciados'][i])
+        print ('Simplificación ortografica %s \n',i,') ', e['enunciados'][i])
         print("\n")
     
 
@@ -532,8 +532,8 @@ def detectar_vars(data, dfvar):
         #input()
         #lista_estadisticas
         
-        if str(lst_indep) != data['varindep'][contenunciado] 
-        and str(lst_dep) != data['vardep'][contenunciado]:
+        if (str(lst_indep) != data['varindep'][contenunciado] and 
+        str(lst_dep) != data['vardep'][contenunciado]):
             contninguno += 1
             #print('No Acerto Ninguno', contninguno)
             lst_ninguno.append(contenunciado)
@@ -541,20 +541,20 @@ def detectar_vars(data, dfvar):
             lst_fallaindep.append(contenunciado)
             #input()
         
-        if str(lst_indep) == data['varindep'][contenunciado] 
-        and str(lst_dep) == data['vardep'][contenunciado]:
+        if (str(lst_indep) == data['varindep'][contenunciado] 
+        and str(lst_dep) == data['vardep'][contenunciado]):
             contindep += 1
             contdep += 1
             contambos += 1
             #print('Acerto ambos',contambos)
             
-        elif str(lst_indep) == data['varindep'][contenunciado]:
+        elif (str(lst_indep) == data['varindep'][contenunciado]):
             contindep += 1
             #print('Acerto Var Ind', contindep)
             lst_falladep.append(contenunciado)
             #input()
         
-        elif str(lst_dep) == data['vardep'][contenunciado]:
+        elif (str(lst_dep) == data['vardep'][contenunciado]):
             contdep += 1
             #print('Acerto Var Dep', contdep)
             lst_fallaindep.append(contenunciado)

@@ -20,4 +20,4 @@ flujo volumétrico aire|m3/min,m3/s,pie3/min,ft3/min|fv|m3/s
 entropia turbina:st,entropia bomba:sb|kJ/kg K|s|kJ/kg K
 volumen cilindro|L,m3|V|m3
 relación presiones:rp| |rp| 
-emtalpia:h|kJ/kg|h|kJ/kg
+entalpia:h|kJ/kg|h|kJ/kg
