@@ -10,7 +10,7 @@ Created on Sun Dec 17 22:40:58 2017
 import pandas as pd
 
 from librerias.lib_ClasifMod import clasificador
-from librerias.lib_IdVar import detectar_vars
+# from librerias.lib_IdVar import detectar_vars
 
 # This code was tested with matplotlib 2.1.0, numpy 1.16.5
 # pandas 1.0.3, keras 2.1.2, sklearn 0.24.1
@@ -18,12 +18,12 @@ from librerias.lib_IdVar import detectar_vars
 # print("numpy version", np.__version__)
 # print("pandas version", pd.__version__)
 
-data = pd.read_csv('dataset/enunciadosCT2.csv',sep='|',encoding = "ISO-8859-1")
+data = pd.read_csv('dataset/enunciadosCT.csv',sep='|') # ,encoding = "ISO-8859-1"
 
-# clasificador(data)
+clasificador(data)
 
-dfvar = pd.read_csv('dataset/listadevariables2.csv', sep='|')
+# dfvar = pd.read_csv('dataset/listadevariables2.csv', sep='|')
 
-data2 = data.copy()
+# data2 = data.copy()
 
-detectar_vars(data2, dfvar)
+# detectar_vars(data2, dfvar)
