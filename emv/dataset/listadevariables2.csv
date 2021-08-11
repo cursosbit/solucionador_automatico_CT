@@ -12,12 +12,12 @@ fuerza centrípeta:Fc,fuerza:F,tensión:T|N,lbf|F|N
 coeficiente fricción:uk| |uk| 
 temperatura:T|ºC,R,ºF,K|T|K
 presión:P, presión media efectiva:P|Mpa,kPa,bar,psia|P|kPa
-flujo másico|kg/h,kg/s|fm|kg/h
-potencia neta|MW,kW,hp|Pot|MW
-calor|kJ/kg,btu/lbm|q|kJ/kg
+flujo másico:fm|kg/h,kg/s|fm|kg/h
+potencia neta:Wneta|MW,kW,hp|Pot|MW
+calor:q|kJ/kg,btu/lbm|q|kJ/kg
 relación compresión:rc| |rc| 
-flujo volumétrico aire|m3/min,m3/s,pie3/min,ft3/min|fv|m3/s
+flujo volumétrico aire:fv|m3/min,m3/s,pie3/min,ft3/min|fv|m3/s
 entropia turbina:st,entropia bomba:sb|kJ/kg K|s|kJ/kg K
-volumen cilindro|L,m3|V|m3
+volumen cilindro:volcil|L,m3|V|m3
 relación presiones:rp| |rp| 
 entalpia:h|kJ/kg|h|kJ/kg

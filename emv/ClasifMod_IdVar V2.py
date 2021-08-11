@@ -18,12 +18,12 @@ from librerias.lib_IdVar import detectar_vars
 # print("numpy version", np.__version__)
 # print("pandas version", pd.__version__)
 
-data = pd.read_csv('dataset/enunciadosCT1.csv',sep='|')
+data = pd.read_csv('dataset/enunciadosCT2.csv',sep='|',encoding = "ISO-8859-1")
 
 # clasificador(data)
 
 dfvar = pd.read_csv('dataset/listadevariables2.csv', sep='|')
 
-data2=data.copy()
+data2 = data.copy()
 
 detectar_vars(data2, dfvar)
